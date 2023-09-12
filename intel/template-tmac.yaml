@@ -1,23 +1,17 @@
-tamc-version: v1
+tmac-version: v1
 metadata:
-  project-title: example 
-  description: example application
-  tm-model: #string
-    enum:
-      - CIA
-      - DIE
-      - LINDDUN
-      - STRIDE
-      - Generic
+  project-title: string 
+  description: string
+  tm-model: string #[CIA, DIE, LINDDUN, STRIDE, Generic]
   tags: 
-    - team: "APAC Android dev team"
+    - team: string # example - "APAC Android dev team"
     - example: part 1
   tm-owner:
-    - name: nitin
-      email: nitin@company.com
+    - name: string # example - nitin
+      email:  string # example - nitin@company.com
   tm-reviewer:
-    - name: nitin
-      email: nitin@company.com
+    - name: string # example - team-lead
+      email: string # example -  team-lead@company.com
 
 
 /components:
@@ -25,11 +19,11 @@ metadata:
     info:
       name: string
       identity: string # Uniquely identity this component across the project 
-      # syntax - no space, example strings - validator, input-validator-processer, validator-process.
+      # syntax - no space, example strings - validator, input-validator-processer, validator_process.
       description: string
-      bidirectional: boolen #[true, false]
+      bidirectional: boolean 
       oos: 
-        value: boolean #[true, false]
+        value: boolean 
         reason: string
       privilege:
         level: none #[none, low, high]
@@ -50,13 +44,13 @@ metadata:
     name: string
     identity: string
     description: string
-    bidirectional: boolen #[true, false]
+    bidirectional: boolean 
     content:
       value: string #[logs, credentials]
-    encrypted: boolen #[true, false]
-    signed: boolen #[true, false]
+    encrypted: boolean 
+    signed: boolean 
     oos: 
-      value: boolean #[true, false]
+      value: boolean 
       reason: string
     dataflow: 
       - identity: string 
@@ -74,10 +68,10 @@ metadata:
     name: string
     identity: string
     description: string
-    bidirectional: boolen #[true, false]
-    authentication: boolen #[true, false]
+    bidirectional: boolean 
+    authentication: boolean 
     oos: 
-      value: boolean #[true, false]
+      value: boolean 
       reason: string
     dataflow: 
       - identity: string 
