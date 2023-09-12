@@ -1,0 +1,102 @@
+tmac-version: v1
+metadata:
+  project-title: string 
+  description: string
+  tm-model: string #[CIA, DIE, LINDDUN, STRIDE, Generic]
+  tags: 
+    - team: string # example - "APAC Android dev team"
+    - example: part 1
+  tm-owner:
+    - name: string # example - nitin
+      email:  string # example - nitin@company.com
+  tm-reviewer:
+    - name: string # example - team-lead
+      email: string # example -  team-lead@company.com
+
+
+/components:
+  process:
+    info:
+      name: string
+      identity: string # Uniquely identity this component across the project 
+      # syntax - no space, example strings - validator, input-validator-processer, validator_process.
+      description: string
+      bidirectional: boolean 
+      oos: 
+        value: boolean 
+        reason: string
+      privilege:
+        level: none #[none, low, high]
+      dataflow: 
+        - identity: string # 1 data-flow from this component to matching component's identity object
+        - identity: string # 2 data-flow from this component to matching 2'nd component's identity object
+    threats:
+      - title: string
+        type: string
+        score: number
+        priority: string #[low, medium, high]
+        description: string
+        mitigation:
+          status: string #[n/a, open, mitigated]
+          description: string
+
+  store:
+    name: string
+    identity: string
+    description: string
+    bidirectional: boolean 
+    content:
+      value: string #[logs, credentials]
+    encrypted: boolean 
+    signed: boolean 
+    oos: 
+      value: boolean 
+      reason: string
+    dataflow: 
+      - identity: string 
+    threats:
+      - title: string
+        type: string
+        score: number
+        priority: string #[low, medium, high]
+        description: string
+        mitigation:
+          status: string #[n/a, open, mitigated]
+          description: string
+  
+  actor:
+    name: string
+    identity: string
+    description: string
+    bidirectional: boolean 
+    authentication: boolean 
+    oos: 
+      value: boolean 
+      reason: string
+    dataflow: 
+      - identity: string 
+    threats:
+      - title: string
+        type: string
+        score: number
+        priority: string #[low, medium, high]
+        description: string
+        mitigation:
+          status: string #[n/a, open, mitigated]
+          description: string
+
+  trust-boundary:
+    name: string
+    identity: string
+    description: string
+    dataflow: 
+      - identity: string
+    threats:
+      - title: string
+        type: string
+        score: number
+        priority: string #[low, medium, high]
+        description: string
+        mitigation:
+          status: string #[n/a, open, mitigated]
+          description: string 
