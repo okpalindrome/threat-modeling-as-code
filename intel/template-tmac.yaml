@@ -41,19 +41,20 @@ metadata:
           description: string
 
   store:
-    name: string
-    identity: string
-    description: string
-    bidirectional: boolean 
-    content:
-      value: string #[logs, credentials]
-    encrypted: boolean 
-    signed: boolean 
-    oos: 
-      value: boolean 
-      reason: string
-    dataflow: 
-      - identity: string 
+    info:
+      name: string
+      identity: string
+      description: string
+      bidirectional: boolean 
+      content:
+        value: string #[logs, credentials]
+      encrypted: boolean 
+      signed: boolean 
+      oos: 
+        value: boolean 
+        reason: string
+      dataflow: 
+        - identity: string 
     threats:
       - title: string
         type: string
@@ -65,16 +66,17 @@ metadata:
           description: string
   
   actor:
-    name: string
-    identity: string
-    description: string
-    bidirectional: boolean 
-    authentication: boolean 
-    oos: 
-      value: boolean 
-      reason: string
-    dataflow: 
-      - identity: string 
+    info:
+      name: string
+      identity: string
+      description: string
+      bidirectional: boolean 
+      authentication: boolean 
+      oos: 
+        value: boolean 
+        reason: string
+      dataflow: 
+        - identity: string 
     threats:
       - title: string
         type: string
@@ -86,11 +88,12 @@ metadata:
           description: string
 
   trust-boundary:
-    name: string
-    identity: string
-    description: string
-    dataflow: 
-      - identity: string
+    info:
+      name: string
+      identity: string
+      description: string
+      dataflow: 
+        - identity: string
     threats:
       - title: string
         type: string
