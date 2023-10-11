@@ -13,93 +13,92 @@ metadata:
     - name: string # example - team-lead
       email: string # example -  team-lead@company.com
 
-
-/components:
-  process:
-    info:
-      name: string
-      identity: string # Uniquely identity this component across the project 
-      # syntax - no space, example strings - validator, input-validator-processer, validator_process.
-      description: string
-      bidirectional: boolean 
-      oos: 
-        value: boolean 
-        reason: string
-      privilege:
-        level: none #[none, low, high]
-      dataflow: 
-        - identity: string # 1 data-flow from this component to matching component's identity object
-        - identity: string # 2 data-flow from this component to matching 2'nd component's identity object
-    threats:
-      - title: string
-        type: string
-        score: number
-        priority: string #[low, medium, high]
+components:
+  - process:
+      info:
+        name: string
+        identity: string # Uniquely identity this component across the project 
+        # syntax - no space, example strings - validator, input-validator-processer, validator_process.
         description: string
-        mitigation:
-          status: string #[n/a, open, mitigated]
+        bidirectional: boolean 
+        oos: 
+          value: boolean 
+          reason: string
+        privilege:
+          level: none #[none, low, high]
+        dataflow: 
+          - identity: string # 1 data-flow from this component to matching component's identity object
+          - identity: string # 2 data-flow from this component to matching 2'nd component's identity object
+      threats:
+        - title: string
+          type: string
+          score: number
+          priority: string #[low, medium, high]
           description: string
+          mitigation:
+            status: string #[n/a, open, mitigated]
+            description: string
 
-  store:
-    info:
-      name: string
-      identity: string
-      description: string
-      bidirectional: boolean 
-      content:
-        value: string #[logs, credentials]
-      encrypted: boolean 
-      signed: boolean 
-      oos: 
-        value: boolean 
-        reason: string
-      dataflow: 
-        - identity: string 
-    threats:
-      - title: string
-        type: string
-        score: number
-        priority: string #[low, medium, high]
+  - store:
+      info:
+        name: string
+        identity: string
         description: string
-        mitigation:
-          status: string #[n/a, open, mitigated]
+        bidirectional: boolean 
+        content:
+          value: string #[logs, credentials]
+        encrypted: boolean 
+        signed: boolean 
+        oos: 
+          value: boolean 
+          reason: string
+        dataflow: 
+          - identity: string 
+      threats:
+        - title: string
+          type: string
+          score: number
+          priority: string #[low, medium, high]
           description: string
+          mitigation:
+            status: string #[n/a, open, mitigated]
+            description: string
   
-  actor:
-    info:
-      name: string
-      identity: string
-      description: string
-      bidirectional: boolean 
-      authentication: boolean 
-      oos: 
-        value: boolean 
-        reason: string
-      dataflow: 
-        - identity: string 
-    threats:
-      - title: string
-        type: string
-        score: number
-        priority: string #[low, medium, high]
+  - actor:
+      info:
+        name: string
+        identity: string
         description: string
-        mitigation:
-          status: string #[n/a, open, mitigated]
+        bidirectional: boolean 
+        authentication: boolean 
+        oos: 
+          value: boolean 
+          reason: string
+        dataflow: 
+          - identity: string 
+      threats:
+        - title: string
+          type: string
+          score: number
+          priority: string #[low, medium, high]
           description: string
+          mitigation:
+            status: string #[n/a, open, mitigated]
+            description: string
 
-  trust-boundary:
-    info:
-      name: string
-      identity: string
-      description: string
-      dataflow: 
-        - identity: string
-    threats:
-      - title: string
-        type: string
-        score: number
-        priority: string #[low, medium, high]
+  - trust-boundary:
+      info:
+        name: string
+        identity: string
         description: string
-        mitigation:
-          status: string #[n/a, open, mitigated]
-          description: string 
+        dataflow: 
+          - identity: string
+      threats:
+        - title: string
+          type: string
+          score: number
+          priority: string #[low, medium, high]
+          description: string
+          mitigation:
+            status: string #[n/a, open, mitigated]
+            description: string 
